@@ -1,0 +1,11 @@
+---
+- name: use fetch module
+  hosts: all
+  become: true 
+
+  tasks:
+    - name: Fetch the /var/log/secure file from hosts
+      fetch: 
+        src: /var/log/secure
+        dest: secure-backups
+        flat: no
